@@ -14,9 +14,8 @@ import VueRouter from 'vue-router'
 import VueLazyload from 'vue-lazyload'
 
 import BootstrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
+//import 'bootstrap/dist/css/bootstrap.css'
+//import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
 // import { auth, database } from './firebase.config.js' - Uncomment if you need firebase
 import App from './App.vue'
@@ -44,6 +43,7 @@ new Vue({
     this.$store.commit(types.RESET_LOADING_PROGRESS)
     this.$store.dispatch('getAllCategories')
     this.$store.dispatch('getAllPages')
+    this.$store.dispatch('getAllInfo')
 
     // Once user is signed in/out, uncomment if you need Firebase authentication
     // auth.onAuthStateChanged(user => {

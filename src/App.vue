@@ -1,4 +1,5 @@
 <template>
+
   <div id="my-app" class="page-wrapper">
     <transition
       name="loader-animation"
@@ -8,15 +9,35 @@
         <div class="progress-bar" role="progressbar" :style="loaderStyle" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
     </transition>
-
-    <app-header></app-header>
-
-    <transition name="page-transition" mode="out-in" appear>
-      <div class="page-content-wrapper">
-        <router-view></router-view>
+     <div class="backgound">
+          <div class="sky"></div>
+          <div class="clouds"></div>
+          <div class="clouds-2"></div>
+          <div class="moutain-0"></div>
+          <div class="moutain-1"></div>
+          <div class="moutain-2"></div>
+          <div class="sea"></div>
+          <div class="fields-area">
+              <div class="fields-1"></div>
+              <div class="fields-2"></div>
+              <div class="fields-3"></div>
+              <div class="fields-4"></div>
+          </div>
       </div>
-    </transition>
-
+      <div class="container">
+        <app-header></app-header>
+        <app-widget></app-widget>
+        <div class="content-area">
+          <div class="content-head"></div>
+          <div class="content">
+            <app-search></app-search>
+            <transition name="fade" mode="out-in" appear>
+              <router-view></router-view>
+            </transition>
+          </div>
+      </div>
+      
+    </div>
     <app-footer></app-footer>
   </div>
 </template>
@@ -25,6 +46,8 @@
 import { mapGetters, mapActions, mapMutations } from 'vuex'
 import Header from './components/partials/Header'
 import Footer from './components/partials/Footer'
+import Widget from './components/widgets/Widgets'
+import Search from './components/search/Search'
 
 export default {
   data() {
@@ -45,7 +68,9 @@ export default {
 
   components: {
     appHeader: Header,
-    appFooter: Footer
+    appFooter: Footer,
+    appWidget: Widget,
+    appSearch: Search
   },
 
   watch: {
@@ -63,4 +88,10 @@ export default {
 </script>
 <style lang="scss">
   @import './styles/app.scss';
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 </style>

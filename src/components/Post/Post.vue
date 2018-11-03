@@ -1,11 +1,12 @@
 <template>
-  <b-container class="bv-example-row pt-4">
-    <template v-if="post">
-      <h1>{{ post.title.rendered }}</h1>
-      <div v-html="post.content.rendered"></div>
-    </template>
-    <Loader v-else />
-  </b-container>
+ 
+
+  <div class="note" v-if="post">
+    <h1>{{ post.title.rendered }}</h1>
+    <div v-html="post.content.rendered"></div>
+  </div>
+
+
 </template>
 
 <script>
@@ -44,3 +45,8 @@ export default {
   }
 }
 </script>
+<style>
+  .note{
+    margin-top:50px;
+  }
+</style>

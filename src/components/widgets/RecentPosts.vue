@@ -27,7 +27,6 @@ export default {
 
   mounted() {
     this.$store.dispatch('getPosts', { limit: this.limit })
-    console.log(this.recentPosts(10))
   }
 }
 </script>

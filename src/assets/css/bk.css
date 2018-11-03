@@ -1,0 +1,116 @@
+.sky{
+    background: url(../static/back.png);
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    z-index: -5;
+}
+.clouds{
+    background: url(../static/clouds2.png);
+    width: 200%;
+    height: 200px;
+    position: absolute;
+    top:28%;
+    -webkit-animation: movingclouds 500s linear infinite;
+    background-repeat: repeat-x;
+    z-index: -4;
+
+}
+.clouds-2{
+    background: url(../static/clouds4.png);
+    width: 200%;
+    height: 200px;
+    position: absolute;
+    top:40%;
+    -webkit-animation: movingclouds 500s linear infinite;
+    background-repeat: repeat-x;
+    z-index: -2
+
+}
+@keyframes movingclouds {
+    0% {
+        left: 0%
+      }
+    100% {
+        left: -100%
+    }
+}
+.moutain-0{
+    background: url(../static/back.5.png);
+    width: 100%;
+    height: 210px;
+    position: absolute;
+    top:36%;
+    z-index: -3
+}.moutain-1{
+    background: url(../static/back.6.png);
+    width: 100%;
+    height: 210px;
+    position: absolute;
+    top:36%;
+    z-index: -3
+}
+.moutain-2{
+    background: url(../static/moutains.png);
+    width: 100%;
+    height: 280px;
+    position: absolute;
+    top:41%;
+    z-index: -2
+}
+.fields-1 {
+    background: url(../static/bg-fields.png);
+    width: 100%;
+    float: left;
+    height: 100%;
+}
+
+.fields-area{
+    top: 45%;
+    position: absolute;
+    height: 355px;
+    width: 100%;
+    z-index: -1;
+}
+.sea{
+    background: url(../static/water.png);
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    bottom: 0px;
+    z-index: -6;
+}
+ 
+.footer-area {
+    bottom: 0px;
+}
+.footer-area .props{
+    background: url(../static/back_forest.png);
+    position:relative;
+    bottom: -20px;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 332px;
+    z-index: -1;
+    
+}
+.footer-area .grassy{
+    background: url(../static/SpringValley.foot.3.0.png);
+    color: white;
+    width: 100%;
+    min-height: 198px;
+    position: relative;
+    background-repeat: repeat-x;
+    z-index: 1;
+}
+.footer-area p {
+    background: black;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    bottom: 0;
+    position: relative;
+    width: 100%;
+}
+            

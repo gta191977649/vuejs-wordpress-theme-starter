@@ -30,6 +30,7 @@ const router = new Router({
   mode: 'history',
   base: '',
 
+  
   // Prevents window from scrolling back to top
   // when navigating between components/views
   scrollBehavior (to, from, savedPosition) {
@@ -39,6 +40,7 @@ const router = new Router({
       return { x: 0, y: 0 }
     }
   }
+
 })
 
 export default router

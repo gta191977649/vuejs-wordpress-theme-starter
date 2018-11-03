@@ -1,5 +1,15 @@
 export default {
+  getInfo(cb) {
+    axios.get("/wp-json")
+      .then(response => {
+        cb(response.data)
+      })
+      .catch(e => {
+        cb(e)
+      })
+  },
   getCategories (cb) {
+    
     axios.get(window.SETTINGS.API_BASE_PATH + 'categories?sort=name&hide_empty=true&per_page=50')
       .then(response => {
         cb(response.data.filter(c => c.name !== "Uncategorized"))
