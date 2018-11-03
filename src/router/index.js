@@ -17,7 +17,7 @@ const router = new Router({
     },
     {
       // Assuming you're using the default permalink structure for posts
-      path: '/:year/:month/:day/:postSlug',
+      path: '/archive/:postSlug',
       name: 'Post',
       component: Post
     },
