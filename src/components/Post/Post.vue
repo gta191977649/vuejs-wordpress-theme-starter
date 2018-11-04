@@ -1,9 +1,11 @@
 <template>
-  <div class="note" v-if="post">
-    <div class="note-info"><strong>By:</strong> {{post._embedded.author[0].name}} <strong>日付：</strong>{{post.date}}</div>
-    <h1>{{ post.title.rendered }}</h1>
-    <hr/>
-    <div v-html="post.content.rendered"></div>
+  <div class="note-wrapper" v-if="post">
+    <div class="note">
+      <div class="note-info"><strong>By:</strong> {{post._embedded.author[0].name}} <strong>日付：</strong>{{post.date}}</div>
+      <h1>{{ post.title.rendered }}</h1>
+      <hr/>
+      <div v-html="post.content.rendered"></div>
+    </div>
     <comment :postid="post.id"/>
   </div>
 </template>

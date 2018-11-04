@@ -1,7 +1,7 @@
 <template>
     <div>
     <template v-if="recentPostsLoaded">
-        <h1>记事一览</h1>
+        <h1>記事一覧</h1>
         <div class="note" v-for="post in recentPosts(limit)" :key="post.id">
           <div class="note-info"><strong>By:</strong> {{post._embedded.author[0].name}} <strong>日付：</strong>{{post.date}} </div>
           <div class="note-title">
