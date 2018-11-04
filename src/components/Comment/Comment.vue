@@ -25,68 +25,52 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn btn-primary" v-if="comment.parent === 0">返信する</a>
+            <a v-on:click="setReply(comment.id)" class="btn btn-primary" v-if="comment.parent === 0">返信する</a>
 
         </div>
         <!-- 发布评论 -->
-        <div class="maple-ui-window">
-            <div class="maple-ui-window-header">
-                コメントを残す
-                <div class="maple-ui-win-control">
-                    <a href="#" class="btn-ui-disabled float-right">X</a>
-                </div>
-            </div>
-            <form action="#" method="post" id="commentform" class="comment-form">
-                <div class="maple-ui-window-content">
-                    <label for="comment">コメント: ご自由にコメント可能です。(承認制)</label>
-                    <textarea id="comment" class="form-control" name="comment" rows="3"></textarea>
-                    
-                    <label for="author">ニックネーム</label>
-                    <input style="width:100%;" id="author" name="author" class="form-control" type="text" value="" size="30">
-                    
-                    <label for="email">メールアドレス</label>
-                    <input style="width:100%;" id="email" name="email" class="form-control" type="text" value="" size="30">
-                    
-                    <label for="url">サイト</label>
-                    <input style="width:100%;" id="url" name="url" class="form-control" type="text" value="" size="30">
-                </div>
-                <div class="maple-ui-controlwrapper">
-                    <button class="btn btn-ui-primary" type="submit">コメントを送信</button>
-                </div>
-            </form>
-        </div>
+        <comment-form v-on:comment-ok="updateComment" :parentid="parent" :postid="postid"/>
     </div>
 </template>
 
 <script>
+import CommentForm from './CommentForm';
 export default {
-  data() {
-    return {
-      comments: false
-    };
-  },
-  mounted() {
-    this.getComments(this.postid);
-  },
-  props: {
-    postid: {
-      required: true
+    data() {
+        return {
+            comments: false,
+            parent: 0
+        };
+    },
+    mounted() {
+        this.getComments(this.postid);
+    },
+    props: {
+        postid: {
+            required: true
+        }
+    },
+    methods: {
+        getComments: function(id) {
+            axios.get(window.SETTINGS.API_BASE_PATH + "comments?post=" + id)
+            .then(response => {
+                this.comments = response.data;
+                console.log(this.comments)
+            })
+            .catch(e => {
+                console.log(e);
+            });
+        },
+        setReply(parent) { //设置回复
+            this.parent = parent
+        },
+        updateComment:function() { //触发UI重新更新
+            this.getComments(this.postid)
+        }
+    },
+    components: {
+        CommentForm,
     }
-  },
-
-  methods: {
-    getComments: function(id) {
-      axios
-        .get(window.SETTINGS.API_BASE_PATH + "comments?post=" + id)
-        .then(response => {
-          this.comments = response.data;
-          console.log(this.comments)
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    }
-  }
 };
 </script>
 

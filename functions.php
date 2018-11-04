@@ -19,3 +19,8 @@ function load_vue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'load_vue_scripts', 100);
 
+// Disabled comments login (for rest post comment)
+function filter_rest_allow_anonymous_comments() {
+    return true;
+}
+add_filter('rest_allow_anonymous_comments','filter_rest_allow_anonymous_comments');
