@@ -260,3 +260,7 @@ hr {
     height: 2px;
 }
 
+img {
+    height: auto;
+    max-width: 100%;
+}
