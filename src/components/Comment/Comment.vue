@@ -5,10 +5,10 @@
         <div class="comment-list" v-for="comment in comments" :key="comment.id" v-show="comments">
             <!-- 楼主 -->
             <div class="comment-owner" v-if="comment.parent === 0">
-                <div class="comment-avatar"><img :src="comment.author_avatar_urls['96']"></div>
+                <div class="comment-avatar"><a target="_blank" :href="comment.author_url"><img :src="comment.author_avatar_urls['96']"></a></div>
                 <div class="comment-body">
                     <div class="comment-date"><strong>日付：</strong>{{comment.date}}</div>
-                    <div class="comment-nickname">{{comment.author_name}}</div>
+                    <div class="comment-nickname"><a target="_blank" :href="comment.author_url">{{comment.author_name}}</a></div>
                     <hr/>
                     <div class="comment-content" v-html="comment.content.rendered"></div>
                 </div>
@@ -16,16 +16,16 @@
             <!-- 回复 -->
             <div v-for="reply in comments" :key="reply.id">
                 <div class="comment-reply" v-if="reply.parent == comment.id">
-                    <div class="comment-avatar"><img :src="reply.author_avatar_urls['96']"></div>
+                    <div class="comment-avatar"><a target="_blank" :href="comment.author_url"><img :src="reply.author_avatar_urls['96']"></a></div>
                     <div class="comment-body">
                         <div class="comment-date"><strong>日付：</strong>{{reply.date}}</div>
-                        <div class="comment-nickname">{{reply.author_name}}</div>
+                        <div class="comment-nickname"><a target="_blank"  :href="reply.author_url">{{reply.author_name}}</a></div>
                         <hr/>
                         <div class="comment-content" v-html="reply.content.rendered"></div>
                     </div>
                 </div>
             </div>
-            <a v-on:click="setReply(comment.id)" class="btn btn-primary" v-if="comment.parent === 0">返信する</a>
+            <a v-on:click="setReply(comment.id)" class="comment-btn-reply btn btn-primary" v-if="comment.parent === 0">返信する</a>
 
         </div>
         <!-- 发布评论 -->
