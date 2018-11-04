@@ -25,7 +25,8 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn btn-primary">返信する</a>
+            <a href="#" class="btn btn-primary" v-if="comment.parent === 0">返信する</a>
+
         </div>
         <!-- 发布评论 -->
         <div class="maple-ui-window">
