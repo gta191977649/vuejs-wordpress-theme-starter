@@ -447,7 +447,13 @@ hr {
 .maple-ui-window label{
 	font-size:14px;
 }
-
+.maple-ui-loading-img {
+    background: url(../static/loading.gif);
+    width: 467px;
+    height: 370px; 
+    margin-left: auto;
+    margin-right: auto;
+}
 .float-right {
 	float:right;
 }

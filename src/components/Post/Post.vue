@@ -8,6 +8,9 @@
     </div>
     <comment :postid="post.id"/>
   </div>
+  <div v-else>
+    <loader/>
+  </div>
 </template>
 
 <script>

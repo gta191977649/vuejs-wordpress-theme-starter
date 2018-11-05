@@ -4,13 +4,14 @@
         <h1>記事一覧</h1>
         <post-item v-for="post in recentPosts(limit)" :key="post.id" :post="post"/>
     </template>
-    <Loader v-else />
+    <loader v-else />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import PostItem from './PostItem';
+import Loader from '../partials/Loader'
 
 export default {
   props: ["limit"],
@@ -22,7 +23,8 @@ export default {
   },
   
   components: {
-    PostItem
+    PostItem,
+    Loader
   },
   mounted() {
     this.$store.dispatch('getPosts', { limit: this.limit })
