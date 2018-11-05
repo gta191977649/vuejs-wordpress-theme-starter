@@ -1,8 +1,9 @@
 export default {
   getWidgets(cb) {
-    console.log( window.SETTINGS.WIDGET_MENU_NAME)
-    axios.get('wp-json/wp-rest-api-sidebars/v1/sidebars/main')
+    console.log("widget rest")
+    axios.get('/wp-json/wp-rest-api-sidebars/v1/sidebars/main')
     .then(response => {
+      console.log("rest response ",response.data.widgets)
       cb(response.data.widgets)
     })
     .catch(err => {
@@ -29,7 +30,6 @@ export default {
       })
   },
   getCategories (cb) {
-    
     axios.get(window.SETTINGS.API_BASE_PATH + 'categories?sort=name&hide_empty=true&per_page=50')
       .then(response => {
         cb(response.data.filter(c => c.name !== "Uncategorized"))

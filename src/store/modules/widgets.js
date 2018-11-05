@@ -9,13 +9,13 @@ const state = {
 
 // getters
 const getters = {
-    widgets: state => state.widgets,
+    allWidgets: state => state.allWidgets,
+    widgetsLoaded: state => state.loaded,
 }
 
 // actions
 const actions = {
     getAllWidgets ({ commit }) {
-            console.log("getWidgets")
             api.getWidgets(widgets => {
             commit(types.STORE_WIDGET_MENU, { widgets })
             commit(types.WIDGET_LOADED, true)
@@ -27,7 +27,7 @@ const actions = {
 // mutations
 const mutations = {
     [types.STORE_WIDGET_MENU] (state, { widgets }) {
-        state.widgets = widgets
+        state.allWidgets = widgets
     },
 
     [types.WIDGET_LOADED] (state, val) {

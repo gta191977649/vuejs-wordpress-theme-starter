@@ -2,18 +2,14 @@
     <div class="widget-area">
         <nav-menu/>
         <!-- Widgets -->
-        <div class="widget" v-for="(widget,idx) in widgets" :key="idx">
-            <div class="widget-body">
-                <div class="widget-content">
-                    <!--<h1>{{widget.name}}</h1> -->
-                    <div v-html="widget.rendered"></div>
-                </div>
-            </div>
+        <div class="widget" v-for="(widget,idx) in widgets" :key="idx" v-if="widgetsLoaded">
+            <widget-item :widget="widget"/>
         </div>
     </div>
 </template>
 <script>
 import NavMenu from './NavMenu';
+import WidgetItem from './WidgetItem'
 import { mapGetters } from 'vuex';
 
 export default {
@@ -21,11 +17,13 @@ export default {
     
     },
     components: {
-        NavMenu
+        NavMenu,
+        WidgetItem
     },
     computed: {
         ...mapGetters({
-            widgets: 'widgets'
+            widgets: 'allWidgets',
+            widgetsLoaded: 'widgetsLoaded'
         }),
     }
 
