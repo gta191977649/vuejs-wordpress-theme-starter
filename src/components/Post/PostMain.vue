@@ -2,14 +2,7 @@
     <div>
     <template v-if="recentPostsLoaded">
         <h1>記事一覧</h1>
-        <div class="note" v-for="post in recentPosts(limit)" :key="post.id">
-          <div class="note-info"><strong>By:</strong> {{post._embedded.author[0].name}} <strong>日付：</strong>{{post.date}} </div>
-          <div class="note-title">
-            <router-link :to="'/archive/'+post.slug"><h1>{{ post.title.rendered }}</h1></router-link>
-          </div>
-          <hr/>
-          <div v-html="post.excerpt.rendered"></div>
-        </div>
+        <post-item v-for="post in recentPosts(limit)" :key="post.id" :post="post"/>
     </template>
     <Loader v-else />
   </div>
@@ -17,6 +10,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import PostItem from './PostItem';
 
 export default {
   props: ["limit"],
@@ -26,7 +20,10 @@ export default {
       recentPostsLoaded: 'recentPostsLoaded'
     })
   },
-
+  
+  components: {
+    PostItem
+  },
   mounted() {
     this.$store.dispatch('getPosts', { limit: this.limit })
   }

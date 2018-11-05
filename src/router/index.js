@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import Home from '../components/Home.vue'
 import Post from '../components/Post/Post.vue'
 import Page from '../components/Page/Page.vue'
+import Search from '../components/Search/Search'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ const router = new Router({
       path: '/:pageSlug',
       name: 'Page',
       component: Page
+    },
+    {
+      path: '/search/:keyword',
+      name: 'Search',
+      component: Search
     }
   ],
   mode: 'history',

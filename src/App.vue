@@ -47,7 +47,7 @@ import { mapGetters, mapActions, mapMutations } from 'vuex'
 import Header from './components/partials/Header'
 import Footer from './components/partials/Footer'
 import Widget from './components/widgets/Widgets'
-import Search from './components/search/Search'
+import SearchForm from './components/search/SearchForm'
 
 export default {
   data() {
@@ -70,7 +70,7 @@ export default {
     appHeader: Header,
     appFooter: Footer,
     appWidget: Widget,
-    appSearch: Search
+    appSearch: SearchForm
   },
 
   watch: {
