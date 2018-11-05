@@ -21,3 +21,7 @@ export const INFO_LOADED = 'INFO_LOADED'
 //Menu 
 export const STORE_FETCHED_MENU = 'STORE_FETCHED_MENU'
 export const MENU_LOADED = 'MENU_LOADED'
+
+//Widgets
+export const STORE_WIDGET_MENU = 'STORE_WIDGET_MENU'
+export const WIDGET_LOADED = 'WIDGET_LOADED'

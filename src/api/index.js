@@ -1,4 +1,15 @@
 export default {
+  getWidgets(cb) {
+    console.log( window.SETTINGS.WIDGET_MENU_NAME)
+    axios.get('wp-json/wp-rest-api-sidebars/v1/sidebars/main')
+    .then(response => {
+      cb(response.data.widgets)
+    })
+    .catch(err => {
+      cb(err)
+    })
+    
+  },
   getNavMenu(cb) {
     axios.get('/wp-json/menus/v1/menus/'+window.SETTINGS.NAV_MENU_NAME)
     .then(response => {

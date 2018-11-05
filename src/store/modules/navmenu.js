@@ -15,7 +15,6 @@ const getters = {
 // actions
 const actions = {
     getAllNavMenu ({ commit }) {
-        console.log("getnavmenu")
         api.getNavMenu(navmenu => {
         commit(types.STORE_FETCHED_MENU, { navmenu })
         commit(types.MENU_LOADED, true)

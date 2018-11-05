@@ -32,6 +32,7 @@ const router = new Router({
       name: 'Search',
       component: Search
     }
+    
   ],
   mode: 'history',
   base: '',

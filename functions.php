@@ -28,7 +28,7 @@ add_filter('rest_allow_anonymous_comments','filter_rest_allow_anonymous_comments
 function arphabet_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => 'Main',
+		'name'          => 'main',
 		'id'            => 'left',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',

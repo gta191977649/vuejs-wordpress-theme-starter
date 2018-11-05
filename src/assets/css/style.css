@@ -221,15 +221,20 @@ nav a:hover {
     /*background: url(./src/bg_tile.jpg);*/
     width: 195px;
     margin-left: 35px;   
-
 }
 .widget-content > * {
-    margin-top: 0px;
-    margin-bottom: 0px;
     overflow: hidden;
-
 }
-.widget h1 {
+.widget .widget-content ul li{
+    list-style-type: none;
+    margin: 0px;
+}
+/* 处理Widget部分Form的样式 */ 
+.widget .widget-content form {
+    text-align: center;
+    padding: 5px;
+}
+.widget h1,h2 {
     color: #810400;
     font-size: 20px;
     text-align: center;

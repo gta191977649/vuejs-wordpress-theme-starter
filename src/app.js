@@ -4,7 +4,8 @@ window.SETTINGS = {
   // in the created() method
   LOADING_SEGMENTS: 2,
   API_BASE_PATH: '/wp-json/wp/v2/',
-  NAV_MENU_NAME: 'nav'
+  NAV_MENU_NAME: 'nav',
+  WIDGET_MENU_NAME: 'main'
 }
 
 require('./bootstrap')
@@ -46,6 +47,7 @@ new Vue({
     this.$store.dispatch('getAllPages')
     this.$store.dispatch('getAllInfo')
     this.$store.dispatch('getAllNavMenu')
+    this.$store.dispatch('getAllWidgets')
 
     // Once user is signed in/out, uncomment if you need Firebase authentication
     // auth.onAuthStateChanged(user => {
