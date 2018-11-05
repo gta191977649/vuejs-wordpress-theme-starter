@@ -1,4 +1,13 @@
 export default {
+  getNavMenu(cb) {
+    axios.get('/wp-json/menus/v1/menus/'+window.SETTINGS.NAV_MENU_NAME)
+    .then(response => {
+      cb(response.data.items)
+    })
+    .catch(e => {
+      cb(e)
+    })
+  },
   getInfo(cb) {
     axios.get("/wp-json")
       .then(response => {

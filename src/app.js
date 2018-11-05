@@ -3,7 +3,8 @@ window.SETTINGS = {
   // This is likely determined by how many dispatched actions you have below
   // in the created() method
   LOADING_SEGMENTS: 2,
-  API_BASE_PATH: '/wp-json/wp/v2/'
+  API_BASE_PATH: '/wp-json/wp/v2/',
+  NAV_MENU_NAME: 'nav'
 }
 
 require('./bootstrap')
@@ -44,6 +45,7 @@ new Vue({
     this.$store.dispatch('getAllCategories')
     this.$store.dispatch('getAllPages')
     this.$store.dispatch('getAllInfo')
+    this.$store.dispatch('getAllNavMenu')
 
     // Once user is signed in/out, uncomment if you need Firebase authentication
     // auth.onAuthStateChanged(user => {

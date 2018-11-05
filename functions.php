@@ -24,3 +24,22 @@ function filter_rest_allow_anonymous_comments() {
     return true;
 }
 add_filter('rest_allow_anonymous_comments','filter_rest_allow_anonymous_comments');
+
+function arphabet_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Main',
+		'id'            => 'left',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );
+
+function register_my_menu() {
+  register_nav_menu( 'nav', __( 'Primary Menu', 'maple-theme' ) );
+}
+add_action( 'after_setup_theme', 'register_my_menu' );

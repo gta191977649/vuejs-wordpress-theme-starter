@@ -9,6 +9,7 @@ import post from './modules/post'
 import page from './modules/page'
 import info from './modules/info'
 import categories from './modules/categories'
+import navmenu from './modules/navmenu'
 
 Vue.use(Vuex)
 
@@ -29,7 +30,8 @@ export default new Vuex.Store({
     post,
     page,
     categories,
-    info
+    info,
+    navmenu
   },
   strict: debug,
   plugins: [localStorage]
