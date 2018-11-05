@@ -23,7 +23,7 @@ const router = new Router({
       component: Post
     },
     {
-      path: '/:pageSlug',
+      path: '/page/:pageSlug',
       name: 'Page',
       component: Page
     },
