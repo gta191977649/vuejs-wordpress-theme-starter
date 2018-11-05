@@ -110,7 +110,7 @@ body{
 }
 nav {
     width: 230px;
-    padding-left: 40px;
+    padding-left: 25px;
 }
 nav a {
     color: white;
@@ -124,7 +124,6 @@ nav a:hover {
     /*菜单标题*/
     position: absolute;
     z-index: 1;
-   
     left: 35px;
     top: 14px;
     width: 152px;
@@ -137,6 +136,7 @@ nav a:hover {
         1px 1px 0 white;
     color: #810400;
     font-size: 20px;
+    
 }
 .nav-menu-left{
     background: url(../static/bg_top.png) no-repeat right top,url(../static/bg_bottom.png) no-repeat right bottom;
@@ -167,7 +167,8 @@ nav a:hover {
     background: url(../static/bg_middle.png);
     display: block;
     position: relative;
-
+    font-size: 15px;
+    text-shadow: 0px 0px 5px rgba(1, 1, 1, 0.2);
 }
 .nav-menu-left ul li:hover {
     color: #fae537;
@@ -190,7 +191,6 @@ nav a:hover {
 }
 .nav-menu-left li:hover > ul{
     display:block;
-    
 }
 
 .widget::before  {
