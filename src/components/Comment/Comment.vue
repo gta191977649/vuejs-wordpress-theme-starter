@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <a v-on:click="setReply(comment.id)" class="comment-btn-reply btn btn-primary" v-if="comment.parent === 0">返信する</a>
+            <button v-on:click="setReply(comment.id)" class="comment-btn-reply btn btn-primary" v-if="comment.parent === 0">返信する</button>
 
         </div>
         <!-- 发布评论 -->
