@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter  from 'vue-router'
 
 // Components
 import Home from '../components/Home.vue'
@@ -7,12 +7,12 @@ import Post from '../components/Post/Post.vue'
 import Page from '../components/Page/Page.vue'
 import Search from '../components/Search/Search'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-const router = new Router({
+const router = new VueRouter({
   routes: [
     {
-      path: '/',
+      path: '/:page?',
       name: 'Home',
       component: Home
     },

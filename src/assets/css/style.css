@@ -459,6 +459,36 @@ hr {
     border: solid 1px #50565d;
 
 }
+/*分页 */
+.pager {
+    text-align: center;
+    font-size: 0;
+    margin-bottom: 10px;
+}
+.pager ol li a {
+    color: #fff;
+    display: block;
+    padding: 10px 7px;
+}
+.pager ol li {
+    font-size: 12px;
+    background: #ceb084;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: middle;
+}
+.pager ol li.next {
+    border-radius: 0 20px 20px 0;
+    padding-right: 10px;
+}
+.pager ol li.prev {
+    border-radius: 20px 0 0 20px;
+    padding-left: 10px;
+}
+.pager p, .pager ol, .pager ol li {
+    display: inline-block;
+    margin-bottom: 0;
+}
 .float-right {
 	float:right;
 }

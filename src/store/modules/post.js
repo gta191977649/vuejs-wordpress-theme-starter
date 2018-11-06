@@ -9,21 +9,16 @@ const state = {
 
 // getters
 const getters = {
-  recentPosts: state => limit => {
-    if ( !limit || !_.isNumber(limit) || _.isNull(limit) || typeof limit == 'undefined' ) {
-      return state.recent
-    }
-    let recent = state.recent
-    return recent.slice(0, limit)
+  recentPosts: state => {
+    return state.recent
   },
-
   recentPostsLoaded: state => state.loaded
 }
 
 // actions
 const actions = {
-  getPosts ({ commit }, { limit }) {
-    api.getPosts(limit, posts => {
+  getPosts ({ commit }, { page }) {
+    api.getPosts(page, posts => {
       commit(types.STORE_FETCHED_POSTS, { posts })
       commit(types.POSTS_LOADED, true)
       commit(types.INCREMENT_LOADING_PROGRESS)

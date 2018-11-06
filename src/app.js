@@ -5,7 +5,8 @@ window.SETTINGS = {
   LOADING_SEGMENTS: 2,
   API_BASE_PATH: '/wp-json/wp/v2/',
   NAV_MENU_NAME: 'nav',
-  WIDGET_MENU_NAME: 'main'
+  WIDGET_MENU_NAME: 'main',
+  POST_PAGE_LIMIT: 5,
 }
 
 require('./bootstrap')
@@ -23,6 +24,7 @@ import router from './router'
 import App from './App.vue'
 import store from './store'
 import * as types from './store/mutation-types'
+
 
 Vue.use(VueLazyload)
 Vue.use(BootstrapVue)

@@ -43,3 +43,30 @@ function register_my_menu() {
   register_nav_menu( 'nav', __( 'Primary Menu', 'maple-theme' ) );
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
+
+/*
+    =======================
+        默认路由路径修正
+    =======================
+    前端路由结构：
+        文章:   /archives/[文章名称]
+        页面:   /page/[名称]
+        搜索:   /search/[关键字]
+        分类:   /category/[名称]
+*/
+function fix_permalinks() {
+    global $wp_rewrite;
+    $wp_rewrite->set_permalink_structure( '/archives/%postname%/');
+    $wp_rewrite->set_category_base( 'category');
+    $wp_rewrite->set_tag_base( 'tag');
+}
+add_action( 'init', 'fix_permalinks' );
+
+/* 修正Search */
+function ml_fix_search_url() {
+    if ( is_search() && ! empty( $_GET['s'] ) ) {
+        wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
+        exit();
+    }   
+}
+add_action( 'template_redirect', 'ml_fix_search_url' );

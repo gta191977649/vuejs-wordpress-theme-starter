@@ -60,10 +60,10 @@ export default {
       })
   },
 
-  getPosts (limit, cb) {
-    if (_.isEmpty(limit)) { let limit = 5 }
+  getPosts (page, cb) {
+    if (_.isEmpty(page)) { let page = 1 }
     
-    axios.get(window.SETTINGS.API_BASE_PATH + 'posts?_embed&per_page='+limit)
+    axios.get(window.SETTINGS.API_BASE_PATH + 'posts?_embed&per_page='+window.SETTINGS.POST_PAGE_LIMIT+'&page='+page)
       .then(response => {
         cb(response.data)
       })
