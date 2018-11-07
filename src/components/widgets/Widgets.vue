@@ -2,30 +2,21 @@
     <div class="widget-area">
         <nav-menu/>
         <!-- Widgets -->
-        <div class="widget" v-for="(widget,idx) in widgets" :key="idx" v-if="widgetsLoaded && widgets.length">
-            <widget-item :widget="widget"/>
-        </div>
+        <widget-content/>
     </div>
 </template>
 <script>
 import NavMenu from './NavMenu';
-import WidgetItem from './WidgetItem'
-import { mapGetters } from 'vuex';
-
+import WidgetContent from './WidgetsContent'
 export default {
     mounted() {
-    
+        
     },
     components: {
         NavMenu,
-        WidgetItem
+        WidgetContent
     },
-    computed: {
-        ...mapGetters({
-            widgets: 'allWidgets',
-            widgetsLoaded: 'widgetsLoaded'
-        }),
-    }
+   
 
 }
 </script>

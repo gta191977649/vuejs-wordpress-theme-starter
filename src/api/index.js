@@ -11,7 +11,6 @@ export default {
   getWidgets(cb) {
     axios.get('/wp-json/wp-rest-api-sidebars/v1/sidebars/main')
     .then(response => {
-      
       cb(response.data.widgets)
     })
     .catch(err => {

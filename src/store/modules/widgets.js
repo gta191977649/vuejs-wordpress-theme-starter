@@ -9,7 +9,7 @@ const state = {
 
 // getters
 const getters = {
-    allWidgets: state => state.allWidgets,
+    allWidgets: state => state.widgets,
     widgetsLoaded: state => state.loaded,
 }
 
@@ -27,7 +27,7 @@ const actions = {
 // mutations
 const mutations = {
     [types.STORE_WIDGET_MENU] (state, { widgets }) {
-        state.allWidgets = widgets
+        state.widgets = widgets
     },
 
     [types.WIDGET_LOADED] (state, val) {
