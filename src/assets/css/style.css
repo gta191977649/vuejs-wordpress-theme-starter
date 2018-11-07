@@ -489,6 +489,9 @@ hr {
     display: inline-block;
     margin-bottom: 0;
 }
+.pager .current {
+    color: #b00;
+}
 .float-right {
 	float:right;
 }

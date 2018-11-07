@@ -1,7 +1,8 @@
 <template>
     <!-- 导航 -->
     <nav>
-        <div class="nav-menu-left">
+
+        <div class="nav-menu-left" v-if="navmenu.length">
             <div class="title">導航</div>
             <ul>
                 <li v-for="item in getNavMenu(0)" :key="item.ID">
@@ -60,11 +61,13 @@ export default {
         getNavMenu(parent) { //根据Parent查询菜单
             /*console.log("find ",parent)*/
             let menu = []
-            this.navmenu.forEach(item => {
-                if(item.menu_item_parent == parent) {
-                    menu.push(item)
-                }
-            });
+            if(this.navmenu.length){
+                this.navmenu.forEach(item => {
+                    if(item.menu_item_parent == parent) {
+                        menu.push(item)
+                    }
+                });
+            }
             return menu
         }
     }

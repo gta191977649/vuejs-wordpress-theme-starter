@@ -2,7 +2,7 @@
     <div class="widget-area">
         <nav-menu/>
         <!-- Widgets -->
-        <div class="widget" v-for="(widget,idx) in widgets" :key="idx" v-if="widgetsLoaded">
+        <div class="widget" v-for="(widget,idx) in widgets" :key="idx" v-if="widgetsLoaded && widgets.length">
             <widget-item :widget="widget"/>
         </div>
     </div>

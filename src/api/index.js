@@ -65,7 +65,7 @@ export default {
     
     axios.get(window.SETTINGS.API_BASE_PATH + 'posts?_embed&per_page='+window.SETTINGS.POST_PAGE_LIMIT+'&page='+page)
       .then(response => {
-        cb(response.data)
+        cb(response)
       })
       .catch(e => {
         cb(e)

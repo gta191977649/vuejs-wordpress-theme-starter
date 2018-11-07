@@ -6,7 +6,7 @@ import Home from '../components/Home.vue'
 import Post from '../components/Post/Post.vue'
 import Page from '../components/Page/Page.vue'
 import Search from '../components/Search/Search'
-
+import Category from '../components/Category/Category'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -31,7 +31,14 @@ const router = new VueRouter({
       path: '/search/:keyword',
       name: 'Search',
       component: Search
-    }
+    },
+    
+    {
+      path: '/category/:cat',
+      name: 'Category',
+      component: Category
+    },
+
     
   ],
   mode: 'history',

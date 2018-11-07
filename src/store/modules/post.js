@@ -4,6 +4,7 @@ import * as types from '../mutation-types'
 // initial state
 const state = {
   recent: [],
+  totalPage: null,
   loaded: false
 }
 
@@ -11,6 +12,9 @@ const state = {
 const getters = {
   recentPosts: state => {
     return state.recent
+  },
+  totalPostPage: state => {
+    return state.totalPage
   },
   recentPostsLoaded: state => state.loaded
 }
@@ -29,7 +33,8 @@ const actions = {
 // mutations
 const mutations = {
   [types.STORE_FETCHED_POSTS] (state, { posts }) {
-    state.recent = posts
+    state.recent = posts.data
+    state.totalPage = posts.headers["x-wp-totalpages"]
   },
 
   [types.POSTS_LOADED] (state, val) {

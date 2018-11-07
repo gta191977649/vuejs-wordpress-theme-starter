@@ -47,7 +47,7 @@ import { mapGetters, mapActions, mapMutations } from 'vuex'
 import Header from './components/partials/Header'
 import Footer from './components/partials/Footer'
 import Widget from './components/widgets/Widgets'
-import SearchForm from './components/search/SearchForm'
+import SearchForm from './components/Search/SearchForm'
 
 export default {
   data() {

@@ -17,13 +17,16 @@ import Loader from './partials/Loader'
 import Pagination from './Post/Pagination'
 import util from '../utils/isNumber'
 export default {
-  
-  computed: {
-    ...mapGetters({
-      recentPosts: 'recentPosts',
-      totalPage: 'totalPostPage',
-      recentPostsLoaded: 'recentPostsLoaded'
-    })
+  props: {
+        recentPosts:{
+            required: true,
+        },
+        totalPage:{
+            required: true,
+        },
+        recentPostsLoaded:{
+            required: true,
+        },
   },
   data(){
       return {
