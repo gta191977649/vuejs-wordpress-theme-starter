@@ -12,6 +12,13 @@
                         <h3><a :href="link.url">{{link.name}}</a></h3>
                         <p>{{link.description}}</p>
                     </li>
+                     <li v-for="(link,idx) in links" :key="idx">
+                        <a :href="link.url">
+                            <gravatar class="friend-avator" :email="extractImage(link.image)"/>
+                        </a>
+                        <h3><a :href="link.url">{{link.name}}</a></h3>
+                        <p>{{link.description}}</p>
+                    </li>
                 </ul>
             </div>
             <hr/>

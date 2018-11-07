@@ -507,12 +507,13 @@ hr {
 .friend-links ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     padding: 0px;
+    justify-content: center;
 }
 .friend-links li{
-    margin-right: 50px;
     padding: 0px;
-    width: 100px;
+    width: 23%;
     text-decoration: none;
     text-align: center;
 }
