@@ -11,6 +11,12 @@ body{
 h1,h2,h3,h4,h5 {
     color: #6a3017;
 }
+a,a:visited {
+    color: #6a3017;
+}
+a:hover{
+    transform: scale(1.2);
+}
 .header {
 	position:relative;
 	right:75px;
@@ -527,6 +533,13 @@ hr {
 }
 .friend-links a{
     text-decoration: none;
+}
+.footer-area a {
+    text-decoration: none;
+    color: white;
+}
+.footer-area a:visited {
+    color: white;
 }
 img {
     height: auto;
