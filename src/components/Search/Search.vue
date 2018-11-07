@@ -2,6 +2,7 @@
     <div class="search-wrapper">
         <h1>検索結果: {{keyword}}</h1>
         <div v-if="results">
+            <transition-group name="fade" mode="out-in" appear>
             <div class="note" v-for="post in results" :key="post.id">
             <div class="note-info"><strong>By:</strong> {{post._embedded.author[0].name}} <strong>日付：</strong>{{post.date}} </div>
             <div class="note-title">
@@ -10,6 +11,7 @@
             <hr/>
             <div v-html="post.excerpt.rendered"></div>
             </div>
+            </transition-group>
         </div>
         <div v-if="results.length == 0">
             <p><strong>{{keyword}}</strong> に一致する文章は見つかりませんでした =w=</p>

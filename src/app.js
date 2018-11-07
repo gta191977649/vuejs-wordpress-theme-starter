@@ -7,6 +7,7 @@ window.SETTINGS = {
   NAV_MENU_NAME: 'nav',
   WIDGET_MENU_NAME: 'main',
   POST_PAGE_LIMIT: 5,
+  FRIENDLY_PAGE:"friendly_links.php"
 }
 
 require('./bootstrap')
@@ -50,6 +51,7 @@ new Vue({
     this.$store.dispatch('getAllInfo')
     this.$store.dispatch('getAllNavMenu')
     this.$store.dispatch('getAllWidgets')
+    this.$store.dispatch('getAllLinks')
 
     // Once user is signed in/out, uncomment if you need Firebase authentication
     // auth.onAuthStateChanged(user => {

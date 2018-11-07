@@ -8,7 +8,6 @@
                 <li v-for="item in getNavMenu(0)" :key="item.ID">
                     <a href="#" v-on:click="handleLinkUri(item.object,item.url)">{{item.title}}</a>
                     <!-- 便利继续查找属于该菜单的二级菜单 -->
-    
                     <ul v-if="getNavMenu(item.ID)">
                         <li v-for="secondItem in getNavMenu(item.ID)" :key="secondItem.ID">
                             <a href="#" v-on:click="handleLinkUri(secondItem.object,secondItem.url)">{{secondItem.title}}</a>
@@ -25,6 +24,11 @@
                     </ul>
                 </li>        
                 --> 
+                <!-- 友情链接 -->
+                <li v-if="friendlyLinkPage">
+                    <router-link to="/link/tomodachi">{{friendlyLinkPage.title.rendered}}</router-link>
+                </li>
+                
             </ul>
             
         </div>
@@ -38,6 +42,7 @@ export default {
     computed: {
         ...mapGetters({
             navmenu: 'navmenu',
+            friendlyLinkPage: 'friendlyLinkPage',
             loaded: 'loaded'
         })
     },

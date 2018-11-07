@@ -5,6 +5,7 @@ import { isNumber } from 'util';
 // initial state
 const state = {
   all: [],
+  friendlyLinkPage: null,
   loaded: false,
   page: null
 }
@@ -27,7 +28,8 @@ const getters = {
     if (state.all.length < 1) { return false }
     let all = [...state.all]
     return all.splice(0, Math.min(limit, state.all.length))
-  }
+  },
+  friendlyLinkPage: state => state.friendlyLinkPage
 }
 
 // actions
@@ -45,6 +47,17 @@ const actions = {
 const mutations = {
   [types.STORE_FETCHED_PAGES] (state, { pages }) {
     state.all = pages
+    //查找友情链接
+    let targetId = null
+    for(let i = 0; i < pages.length; i++) {
+        if(pages[i]["template"] == window.SETTINGS.FRIENDLY_PAGE) {
+            targetId = i
+            break;
+        }
+    }
+    if(targetId !== null) {
+      state.friendlyLinkPage = pages[targetId]
+    }
   },
 
   [types.PAGES_LOADED] (state, val) {

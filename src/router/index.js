@@ -7,6 +7,7 @@ import Post from '../components/Post/Post.vue'
 import Page from '../components/Page/Page.vue'
 import Search from '../components/Search/Search'
 import Category from '../components/Category/Category'
+import FriendlyLink from '../components/FriendlyLink/Link'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -32,11 +33,15 @@ const router = new VueRouter({
       name: 'Search',
       component: Search
     },
-    
     {
       path: '/category/:cat',
       name: 'Category',
       component: Category
+    },
+    { //友情链接
+      path: '/link/tomodachi',
+      name: 'Friends',
+      component: FriendlyLink
     },
 
     

@@ -9519,6 +9519,13 @@ vue-functional-data-merge@^2.0.3:
   resolved "https://registry.yarnpkg.com/vue-functional-data-merge/-/vue-functional-data-merge-2.0.7.tgz#bdee655181eacdcb1f96ce95a4cc14e75313d1da"
   integrity sha512-pvLc+H+x2prwBj/uSEIITyxjz/7ZUVVK8uYbrYMmhDvMXnzh9OvQvVEwcOSBQjsubd4Eq41/CSJaWzy4hemMNQ==
 
+vue-gravatar@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/vue-gravatar/-/vue-gravatar-1.3.0.tgz#bbb362d24cd2957b57a475376608780d3161b3b0"
+  integrity sha512-g22+v1bSR9HbDEkAeKznHowYHvdgfVzz8sd3w1zDH+C4g+d6xnwaj3Td7NzMwRxWYVkNaSrts/hpW+RjCLxe9Q==
+  dependencies:
+    md5 "^2.2.1"
+
 vue-hot-reload-api@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.1.1.tgz#1ba6712166182fd651753804b9d8d8d02d855579"

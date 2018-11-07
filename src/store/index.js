@@ -11,6 +11,7 @@ import info from './modules/info'
 import categories from './modules/categories'
 import navmenu from './modules/navmenu'
 import widgets from './modules/widgets'
+import link from './modules/links'
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
@@ -32,7 +33,8 @@ export default new Vuex.Store({
     categories,
     info,
     navmenu,
-    widgets
+    widgets,
+    link,
   },
   strict: debug,
   plugins: [localStorage]

@@ -44,6 +44,10 @@ function register_my_menu() {
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
 
+/* 开启连接管理器 */
+add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+
+
 /*
     =======================
         默认路由路径修正

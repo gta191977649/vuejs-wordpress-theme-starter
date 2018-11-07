@@ -25,3 +25,8 @@ export const MENU_LOADED = 'MENU_LOADED'
 //Widgets
 export const STORE_WIDGET_MENU = 'STORE_WIDGET_MENU'
 export const WIDGET_LOADED = 'WIDGET_LOADED'
+
+//Links 
+export const STORE_LINKS = 'STORE_LINKS'
+export const LINKS_LOADED = 'LINKS_LOADED'
+

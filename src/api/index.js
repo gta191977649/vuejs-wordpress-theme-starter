@@ -1,9 +1,17 @@
 export default {
+  getLinks(cb) {
+    axios.get('/wp-json/wp/v2/links')
+    .then(response => {
+      cb(response.data)
+    })
+    .catch(err => {
+      cb(err)
+    })
+  },
   getWidgets(cb) {
-    console.log("widget rest")
     axios.get('/wp-json/wp-rest-api-sidebars/v1/sidebars/main')
     .then(response => {
-      console.log("rest response ",response.data.widgets)
+      
       cb(response.data.widgets)
     })
     .catch(err => {
