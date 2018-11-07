@@ -1,7 +1,6 @@
 <template>
     <div class="post-wapper" v-if="recentPostsLoaded">
         <h1>記事一覧</h1>
-       
         <transition-group name="fade" mode="out-in" appear>
             <post-item v-for="post in recentPosts" :key="post.id" :post="post"/>
         </transition-group>

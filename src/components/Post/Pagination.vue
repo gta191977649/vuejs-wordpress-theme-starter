@@ -1,6 +1,5 @@
 <template>
     <div class="pagination-wrapper">
-      
         <div class="pager">
             <ol>
                 <li class="prev">
