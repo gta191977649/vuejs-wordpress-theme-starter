@@ -25,7 +25,7 @@ import router from './router'
 import App from './App.vue'
 import store from './store'
 import * as types from './store/mutation-types'
-
+import {Luminous} from 'luminous-lightbox'; 
 
 Vue.use(VueLazyload)
 Vue.use(BootstrapVue)
@@ -37,7 +37,17 @@ router.afterEach((to, from) => {
   });
   $("body").addClass("vue--page--"+_.toLower(to.name))
 })
-
+/*
+  解决图片Lightbox问题
+  参考: https://wemo.tech/1169
+*/
+Vue.directive('note',function (el) {
+  let blocks = el.querySelectorAll('img');
+  blocks.forEach((block)=>{
+    new Luminous(block,{namespace:'img',sourceAttribute:'src'})
+  })
+  
+})
 
 new Vue({
   el: '#app',

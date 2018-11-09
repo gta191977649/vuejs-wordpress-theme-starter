@@ -48,6 +48,7 @@ import Header from './components/partials/Header'
 import Footer from './components/partials/Footer'
 import Widget from './components/widgets/Widgets'
 import SearchForm from './components/Search/SearchForm'
+import 'luminous-lightbox/dist/luminous-basic.min.css'
 
 export default {
   data() {
