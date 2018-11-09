@@ -44,7 +44,7 @@ router.afterEach((to, from) => {
 Vue.directive('note',function (el) {
   let blocks = el.querySelectorAll('img');
   blocks.forEach((block)=>{
-    new Luminous(block,{namespace:'img',sourceAttribute:'src'})
+    new Luminous(block,{namespace:'img',sourceAttribute:'src',caption:block.src})
   })
   
 })

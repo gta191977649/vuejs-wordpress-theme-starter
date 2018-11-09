@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Roboto+Slab:400,700');
 
 @import "variables";
 
@@ -18,4 +17,5 @@
 @import "partials/sidebar";
 @import "partials/posts";
 
-
+//Dependecy CSS
+@import '~luminous-lightbox/dist/luminous-basic.min.css';
