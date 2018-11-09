@@ -35,6 +35,7 @@ const getters = {
 // actions
 const actions = {
   getAllPages ({ commit }) {
+    commit(types.PAGES_LOADED, false)
     api.getPages(pages => {
       commit(types.STORE_FETCHED_PAGES, { pages })
       commit(types.PAGES_LOADED, true)

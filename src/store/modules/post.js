@@ -22,6 +22,7 @@ const getters = {
 // actions
 const actions = {
   getPosts ({ commit }, { page }) {
+    commit(types.POSTS_LOADED, false)
     api.getPosts(page, posts => {
       commit(types.STORE_FETCHED_POSTS, { posts })
       commit(types.POSTS_LOADED, true)

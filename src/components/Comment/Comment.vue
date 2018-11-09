@@ -55,10 +55,10 @@ export default {
             axios.get(window.SETTINGS.API_BASE_PATH + "comments?post=" + id)
             .then(response => {
                 this.comments = response.data;
-                console.log(this.comments)
+                //console.log(this.comments)
             })
             .catch(e => {
-                console.log(e);
+                //console.log(e);
             });
         },
         setReply(parent) { //设置回复

@@ -37,10 +37,10 @@ export default {
       axios.get(window.SETTINGS.API_BASE_PATH + 'posts?_embed&slug=' + this.$route.params.postSlug)
       .then(response => {
         this.post = response.data[0]
-        console.log(response.data[0])
+        //console.log(response.data[0])
       })
       .catch(e => {
-        console.log(e);
+        //console.log(e);
       })
     }
   },

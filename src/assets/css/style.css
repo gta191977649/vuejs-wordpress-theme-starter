@@ -61,11 +61,11 @@ a:hover{
     background: #fef8ed;
     margin-left: 19px;
     margin-right: 19px;
-    border: 3px solid #dbc19a;
+    border: 3px solid #ddc49e;
     border-top: none;
     margin-bottom: 20px;
     min-height: 600px;
-	color:#3C250A;
+    color:#3C250A;
 }
 .content h1 {
     color:#810400;
@@ -549,4 +549,21 @@ img {
 a:hover {
     text-decoration: underline;
     color:#b99660;
+}
+/* 代码高光 */
+.note code {
+    border: solid 1px rgba(1, 1, 1, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+}
+.note code:hover {
+    box-shadow: 0px 0px 10px 0px rgba(255, 128, 0, 0.75);
+    transform: scale(1.005);
+}
+.note img {
+    border-radius: 5px;    
+}
+.note img:hover {
+    box-shadow: 0px 0px 10px 0px rgba(255, 128, 0, 0.75);
+    transform: scale(1.005);
 }

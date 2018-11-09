@@ -4357,6 +4357,23 @@ he@1.1.x, he@^1.1.0:
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
   integrity sha1-k0EP0hsAlzUVH4howvJx80J+I/0=
 
+highlight.js@^9.7.0:
+  version "9.13.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.13.1.tgz#054586d53a6863311168488a0f58d6c505ce641e"
+  integrity sha512-Sc28JNQNDzaH6PORtRLMvif9RSn1mYuOoX3omVjnb0+HbpPygU2ALBI0R/wsiqCb4/fcp07Gdo8g+fhtFrQl6A==
+
+highlighter@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/highlighter/-/highlighter-0.1.0.tgz#07a4140bae50ab3c7ff198f2d094b38920ccabb2"
+  integrity sha1-B6QUC65Qqzx/8Zjy0JSziSDMq7I=
+  dependencies:
+    highlight.js "^9.7.0"
+
+highlightjs-line-numbers.js@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/highlightjs-line-numbers.js/-/highlightjs-line-numbers.js-2.5.0.tgz#b4844a0150bed501fc36e689ef0e931926036329"
+  integrity sha512-N+rl8W4n5/DClFyLcwRP95QvcTpOWkodxiKykwIphMIMh/5PToH7no0LS32xZDH13g6+bf5EG0vYzqeKXLRQfg==
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"

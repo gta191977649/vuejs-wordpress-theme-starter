@@ -26,6 +26,8 @@ import App from './App.vue'
 import store from './store'
 import * as types from './store/mutation-types'
 import {Luminous} from 'luminous-lightbox'; 
+import hljs from 'highlight.js';
+
 
 Vue.use(VueLazyload)
 Vue.use(BootstrapVue)
@@ -37,15 +39,27 @@ router.afterEach((to, from) => {
   });
   $("body").addClass("vue--page--"+_.toLower(to.name))
 })
-/*
-  解决图片Lightbox问题
-  参考: https://wemo.tech/1169
-*/
+
 Vue.directive('note',function (el) {
-  let blocks = el.querySelectorAll('img');
-  blocks.forEach((block)=>{
+  /*
+    解决图片Lightbox问题
+    参考: https://wemo.tech/1169
+  */
+  let Imgblocks = el.querySelectorAll('img');
+  Imgblocks.forEach((block)=>{
     new Luminous(block,{namespace:'img',sourceAttribute:'src',caption:block.src})
   })
+  /*
+    解决代码高光问题
+  */
+
+  let Codeblocks = el.querySelectorAll('code');
+  Codeblocks.forEach((block)=>{
+    hljs.highlightBlock(block);
+
+  })
+  
+
   
 })
 

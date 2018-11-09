@@ -2,7 +2,7 @@
   <div class="note">
     <template v-if="allPagesLoaded">
       <h1>{{ pageContent.title.rendered }}</h1>
-      <div v-html="pageContent.content.rendered"></div>
+      <div v-html="pageContent.content.rendered" v-note></div>
     </template>
     <Loader v-else />
   </div>

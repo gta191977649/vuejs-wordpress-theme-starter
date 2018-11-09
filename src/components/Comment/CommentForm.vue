@@ -2,9 +2,11 @@
     <div class="maple-ui-window">
             <div class="maple-ui-window-header">
                 コメントを残す {{comment.parent}}
+                <!--
                 <div class="maple-ui-win-control">
                     <a href="#" class="btn-ui-disabled float-right">X</a>
                 </div>
+                -->
             </div>
         <form v-on:submit.prevent="submit">
             <div class="maple-ui-window-content">
@@ -67,7 +69,7 @@ export default {
     methods: {
         submit() {
             let formData = this.comment
-            console.log(formData)
+            //console.log(formData)
             //异步提交评论
             axios.post(`${this.info.url}/wp-json/wp/v2/comments`,formData)
             .then(response => { //当评论发布成功后
