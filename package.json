@@ -45,6 +45,7 @@
     "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
+    "eslint": "^5.9.0",
     "highlighter": "^0.1.0",
     "highlightjs-line-numbers.js": "^2.5.0",
     "luminous-lightbox": "^2.3.1",

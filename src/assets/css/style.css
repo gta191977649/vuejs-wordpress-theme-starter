@@ -567,3 +567,37 @@ a:hover {
     box-shadow: 0px 0px 10px 0px rgba(255, 128, 0, 0.75);
     transform: scale(1.005);
 }
+
+.alert-primary::before {
+    position: relative;
+    float: left;
+    display: block;
+    content: '';
+    background: url(../static/FloatNotice.79.0.png) no-repeat 0 0;
+    height: 72px;
+    width: 84px;
+    margin-left: -84px;    
+}
+
+.alert-primary {
+    background: url(../static/FloatNotice.79.1.png) repeat-x;
+    height: 72px;
+    margin-left: 84px;    
+    margin-right:62px; 
+}
+
+.alert-primary::after {
+    position: relative;
+    display: block;
+    float: right;
+    content: '';
+    background: url(../static/FloatNotice.79.2.png) no-repeat 0 0;
+    width: 62px;
+    height: 84px;
+    margin-right:-62px; 
+}
+.alert-content {
+    line-height: 72px;
+    color:whitesmoke;
+    position: absolute;
+}

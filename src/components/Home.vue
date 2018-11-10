@@ -8,7 +8,6 @@
     </div>
     <loader v-else />
 </template>
-
 <script>
 import { mapGetters } from 'vuex'
 import PostItem from './Post/PostItem';
@@ -16,7 +15,7 @@ import Loader from './partials/Loader'
 import Pagination from './Post/Pagination'
 import util from '../utils/isNumber'
 export default {
-  
+
   computed: {
     ...mapGetters({
       recentPosts: 'recentPosts',
