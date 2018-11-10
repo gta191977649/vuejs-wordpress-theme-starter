@@ -6,21 +6,25 @@
                 <post-item v-for="post in results" :key="post.id" :post="post"/>
             </transition-group>
         </div>
-        <div v-if="results.length == 0">
+        <div v-if="results.length == 0 && !onProcessing">
             <p><strong>{{keyword}}</strong> に一致する文章は見つかりませんでした =w=</p>
         </div>
+        <loader v-if="onProcessing"/>
     </div>
 </template>
 
 <script>
 import PostItem from '../Post/PostItem'
+import Loader from '../partials/Loader'
 export default {
     components:{
         PostItem,
+        Loader,
     },
     data() {
         return {
             keyword:null,
+            onProcessing:false,
             results:[]
         }
     },
@@ -40,11 +44,14 @@ export default {
     },
     methods:{
         search(keyword) {
+            this.onProcessing = true
             axios.get(window.SETTINGS.API_BASE_PATH + 'posts?_embed&search=' + this.keyword)
             .then((response) => {
                 this.results = response.data
+                this.onProcessing = false
             }).catch((err) => {
                 alert("Errorr on search!\n",err)
+                this.onProcessing = false
             });
         }
     }
