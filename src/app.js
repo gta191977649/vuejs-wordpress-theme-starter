@@ -40,7 +40,7 @@ router.afterEach((to, from) => {
   $("body").addClass("vue--page--"+_.toLower(to.name))
 })
 
-Vue.directive('note',function (el) {
+Vue.directive('note', (el) =>{
   /*
     解决图片Lightbox问题
     参考: https://wemo.tech/1169
@@ -52,15 +52,24 @@ Vue.directive('note',function (el) {
   /*
     解决代码高光问题
   */
-
   let Codeblocks = el.querySelectorAll('code');
   Codeblocks.forEach((block)=>{
     hljs.highlightBlock(block);
 
   })
-  
 })
+/*
+Vue.directive('app',function(el) {
 
+  el.addEventListener('mouseover',function(element){
+    if(element.target.nodeName == "A") {
+      let audio = new Audio('http://wp.site/wp-content/themes/vuejs-wordpress-theme-starter/dist/assets/static/effect/BtMouseOver.mp3');
+      audio.play();
+    }
+  })
+
+})
+*/
 new Vue({
   el: '#app',
   store,

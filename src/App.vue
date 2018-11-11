@@ -1,6 +1,6 @@
 <template>
 
-  <div id="my-app" class="page-wrapper">
+  <div id="my-app" class="page-wrapper" v-app>
     <transition
       name="loader-animation"
       enter-active-class="animated fadeIn"
@@ -36,7 +36,11 @@
             </transition>
           </div>
       </div>
-      
+      <audio>
+	    <source src="audio/beep.mp3"></source>
+      <source src="audio/beep.ogg"></source>
+      Your browser isn't invited for super fun audio time.
+    </audio>
     </div>
     <app-footer></app-footer>
   </div>
