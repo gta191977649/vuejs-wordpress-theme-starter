@@ -261,6 +261,9 @@ nav a:hover {
 	padding-bottom:5px;
 	border:none;
 }
+.btn:hover {
+    cursor: url(../static/dcMark.0.png), auto;
+}
 .maple-ui-win-control {
 	float:right;	
 	padding:1px;
@@ -600,4 +603,15 @@ a:hover {
     line-height: 72px;
     color:whitesmoke;
     position: absolute;
+}
+/* Curser */
+body {
+    cursor: url(../static/Cursor.0.0.png),auto;
+}
+body:active {
+    cursor: url(../static/Cursor.12.0.png),auto;
+}
+
+a:hover {
+    cursor: url(../static/Cursor.1.1.png),auto;
 }

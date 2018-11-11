@@ -59,8 +59,6 @@ Vue.directive('note',function (el) {
 
   })
   
-
-  
 })
 
 new Vue({
