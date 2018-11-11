@@ -1,6 +1,6 @@
 <template>
 
-  <div id="my-app" class="page-wrapper" v-app>
+  <div id="my-app" class="page-wrapper" @mouseover="onMouseHover" @mousedown="onMouseDown">
     <transition
       name="loader-animation"
       enter-active-class="animated fadeIn"
@@ -36,11 +36,7 @@
             </transition>
           </div>
       </div>
-      <audio>
-	    <source src="audio/beep.mp3"></source>
-      <source src="audio/beep.ogg"></source>
-      Your browser isn't invited for super fun audio time.
-    </audio>
+
     </div>
     <app-footer></app-footer>
   </div>
@@ -54,9 +50,27 @@ import Widget from './components/widgets/Widgets'
 import SearchForm from './components/Search/SearchForm'
 
 export default {
+  mounted(){
+    this.audio = new Audio()
+  },
+  methods:{
+    onMouseHover(element) {
+      if(element.target.tagName == "A" || element.target.tagName == "IMG") {
+        this.playSfX(window.SETTINGS.UI_MOUSE_OVER)
+      }
+    },
+    onMouseDown() {
+       this.playSfX(window.SETTINGS.UI_CLICK)
+    },
+    playSfX(url){
+      this.audio.src = url
+      if(this.audio.paused) this.audio.play()
+    }
+  },
   data() {
     return {
-      showLoader: true
+      showLoader: true,
+      audio: null,
     }
   },
   computed: {

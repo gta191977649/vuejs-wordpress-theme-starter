@@ -13,9 +13,13 @@
 <script>
 export default {
     props:['show','content'],
+    mounted(){
+        this.audio = new Audio(window.SETTINGS.UI_ALERT)
+    },
     data(){
         return{
             showAlert:this.show,
+            audio:null,
         }
     },
     methods:{
@@ -31,6 +35,7 @@ export default {
         },
         showAlert(val) {
             if(val) {
+                this.audio.play()
                 setTimeout(this.hide, 5000)
             }
         }
