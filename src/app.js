@@ -3,7 +3,7 @@ window.SETTINGS = {
   // This is likely determined by how many dispatched actions you have below
   // in the created() method
   LOADING_SEGMENTS: 2,
-  SITE_URI: 'http://wp.site',
+  SITE_URI: '', //默认可以不填，前提是你的博客在你域名下面，而不是在子目录里
   NAV_MENU_NAME: 'nav',
   WIDGET_MENU_NAME: 'main',
   POST_PAGE_LIMIT: 5,
