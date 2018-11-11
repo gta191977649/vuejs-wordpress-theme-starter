@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         getComments: function(id) {
-            axios.get(window.SETTINGS.API_BASE_PATH + "comments?post=" + id)
+            axios.get(`${window.SETTINGS.SITE_URI}/wp-json/wp/v2/comments?post=${id}` )
             .then(response => {
                 this.comments = response.data;
                 //console.log(this.comments)

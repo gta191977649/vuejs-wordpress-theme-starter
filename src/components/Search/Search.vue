@@ -45,7 +45,7 @@ export default {
     methods:{
         search(keyword) {
             this.onProcessing = true
-            axios.get(window.SETTINGS.API_BASE_PATH + 'posts?_embed&search=' + this.keyword)
+            axios.get(`${window.SETTINGS.SITE_URI}/wp-json/wp/v2/posts?_embed&search=${this.keyword}`)
             .then((response) => {
                 this.results = response.data
                 this.onProcessing = false
