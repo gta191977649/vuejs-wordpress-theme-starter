@@ -19,12 +19,22 @@ import Comment from '../Comment/Comment.vue';
 import { mapGetters } from 'vuex';
 
 export default {
+  mounted(){
+    this.audio = new Audio(window.SETTINGS.UI_LOAED)
+  },
   data() {
     return {
-      post: false
+      post: false,
+      audio: null,
     }
   },
-
+  watch:{
+    post (newval){
+      if(newval) {
+        this.audio.play()
+      }
+    }
+  },
   computed: {
 
   },

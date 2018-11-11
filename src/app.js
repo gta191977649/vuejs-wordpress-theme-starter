@@ -12,7 +12,9 @@ window.SETTINGS = {
   // UI EFFECT
   UI_CLICK: "https://api.buncho.moe/mapleeffect/BtMouseClick.mp3",
   UI_MOUSE_OVER: "https://api.buncho.moe/mapleeffect/Tab.mp3",
-  UI_ALERT:"https://api.buncho.moe/mapleeffect/DlgNotice.mp3"
+  UI_ALERT:"https://api.buncho.moe/mapleeffect/DlgNotice.mp3",
+  UI_LOAED:"https://api.buncho.moe/mapleeffect/ScrollUp.mp3",
+  UI_POST_SELECT:"https://api.buncho.moe/mapleeffect/WorldSelect.mp3",
 }
 require('./bootstrap')
 

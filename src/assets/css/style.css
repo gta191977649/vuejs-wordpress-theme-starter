@@ -107,10 +107,12 @@ a:hover{
     text-align: right;
     margin-bottom: -20px;
 }
-.note-title a{
+.note-title a {
     text-decoration: none !important;
 }
-
+.note-title a:hover {
+    color: #b99660 !important;
+}
 .widget-area {
     width: 275px;
     float: left;

@@ -15,7 +15,6 @@ import Loader from './partials/Loader'
 import Pagination from './Post/Pagination'
 import util from '../utils/isNumber'
 export default {
-
   computed: {
     ...mapGetters({
       recentPosts: 'recentPosts',
@@ -26,6 +25,7 @@ export default {
   data(){
       return {
           currentPage: 1,
+          loadedAudio: null,
       }
   },
   methods: {
@@ -49,7 +49,6 @@ export default {
           } else {
                 this.currentPage = 1
           }
-            
       }
   },
   components: {
@@ -58,6 +57,11 @@ export default {
     Pagination
   },
   watch:{
+    recentPostsLoaded(newWal) {
+        if(newWal) {
+            this.loadedAudio.play()
+        }
+    },
     currentPage(newWal) {
         this.$store.dispatch('getPosts', { page: this.currentPage })
     },
@@ -65,8 +69,9 @@ export default {
   },
   mounted() {
     this.loadPageFromParam()
-    
     this.$store.dispatch('getPosts', { page: this.currentPage })
+    this.loadedAudio = new Audio(window.SETTINGS.UI_LOAED)
+    
   }
 }
 </script>

@@ -2,7 +2,7 @@
 
     <div class="note">
         <div class="note-info"><strong>By:</strong> {{post._embedded.author[0].name}} <strong>日付：</strong>{{post.date}} </div>
-        <div class="note-title">
+        <div class="note-title" @mouseover="playerSelectAudio">
             <router-link :to="'/archives/'+post.slug"><h1>{{ post.title.rendered }}</h1></router-link>
         </div>
         <hr/>
@@ -13,7 +13,20 @@
 
 <script>
 export default {
-    props: ["post"]
+    props: ["post"],
+    data(){
+        return {
+            selectAudio:null,
+        }
+    },
+    methods:{
+        playerSelectAudio(){
+            this.selectAudio.play()
+        }
+    },
+    mounted(){
+        this.selectAudio = new Audio(window.SETTINGS.UI_POST_SELECT)
+    }
 }
 </script>
 
