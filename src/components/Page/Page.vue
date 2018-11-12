@@ -4,9 +4,8 @@
         <h1>{{ pageContent.title.rendered }}</h1>
         <div v-html="pageContent.content.rendered" v-note></div>
     </div>
-    {{pageContent.id}}
-    <comment :postid="pageContent.id" v-if="pageContent.comment_status == 'open'"/>
     <Loader v-else />
+    <comment :postid="pageContent.id" v-if="pageContent.comment_status == 'open'"/>
   </div>
 </template>
 
