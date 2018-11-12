@@ -12,8 +12,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     props: ["post"],
+    computed:{
+        ...mapGetters({
+            cats: 'allCategories',
+            allCatLoaded: 'allCategoriesLoaded'
+        }),
+    },
     data(){
         return {
             selectAudio:null,
