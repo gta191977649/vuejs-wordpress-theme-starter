@@ -1,6 +1,6 @@
 <template>
-    <div class="link-wrapper">
-        <div class="note" v-if="friendlyLinkPage">
+    <div class="link-wrapper" v-if="friendlyLinkPage">
+        <div class="note">
             <h1>{{ friendlyLinkPage.title.rendered }}</h1>
             <hr/>
             <div class="friend-links">
@@ -17,20 +17,21 @@
             <hr/>
             <div v-html="friendlyLinkPage.content.rendered"></div>
         </div>
-        <Loader v-else />
-
+        <comment :postid="friendlyLinkPage.id" v-if="friendlyLinkPage.comment_status == 'open'"/>
     </div>
+    <Loader v-else />
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import Loader from '../partials/Loader.vue';
-import Gravatar from 'vue-gravatar';
-
+import Loader from '../partials/Loader.vue'
+import Gravatar from 'vue-gravatar'
+import Comment from '../Comment/Comment'
 export default {
     components:{
         Loader,
-        Gravatar
+        Gravatar,
+        Comment
     },
     computed: {
         ...mapGetters({

@@ -30,6 +30,7 @@
         </div>
         <!-- 发布评论 -->
         <comment-form v-on:comment-ok="updateComment" :parentid="parent" :postid="postid"/>
+
     </div>
 </template>
 
@@ -53,13 +54,14 @@ export default {
     methods: {
         getComments: function(id) {
             axios.get(`${window.SETTINGS.SITE_URI}/wp-json/wp/v2/comments?post=${id}` )
-            .then(response => {
-                this.comments = response.data;
-                //console.log(this.comments)
-            })
-            .catch(e => {
-                //console.log(e);
-            });
+                .then(response => {
+                    this.comments = response.data;
+                    //console.log(this.comments)
+                })
+                .catch(e => {
+                    console.log(e);
+                }
+            );
         },
         setReply(parent) { //设置回复
             this.parent = parent

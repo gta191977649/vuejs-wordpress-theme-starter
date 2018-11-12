@@ -58,7 +58,8 @@ export default {
         },
         parentid: {
             required: true
-        }
+        },
+        
     },
     computed: {
         ...mapGetters({

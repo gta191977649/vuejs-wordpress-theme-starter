@@ -6,7 +6,7 @@
       <hr/>
       <div v-html="post.content.rendered" v-note></div>
     </div>
-    <comment :postid="post.id"/>
+    <comment :postid="post.id" v-if="post.comment_status == 'open'"/>
   </div>
   <div v-else>
     <loader/>
@@ -50,7 +50,7 @@ export default {
         //console.log(response.data[0])
       })
       .catch(e => {
-        //console.log(e);
+        console.log(e);
       })
     }
   },
