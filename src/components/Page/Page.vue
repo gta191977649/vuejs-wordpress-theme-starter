@@ -2,6 +2,7 @@
   <div class="page-wrap">
     <div class="note"  v-if="allPagesLoaded">
         <h1>{{ pageContent.title.rendered }}</h1>
+        <hr/>
         <div v-html="pageContent.content.rendered" v-note></div>
     </div>
     <Loader v-else />
