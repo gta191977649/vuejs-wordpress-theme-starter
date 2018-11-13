@@ -34,7 +34,7 @@ const router = new VueRouter({
       component: Search
     },
     {
-      path: '/category/:cat',
+      path: '/category/:cat*',
       name: 'Category',
       component: Category
     },

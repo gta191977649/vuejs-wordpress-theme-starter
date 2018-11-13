@@ -11,6 +11,11 @@ const state = {
 const getters = {
   // Returns an array all categories
   allCategories: state => state.all,
+  getCategoriesIdByName: state => (catName) => {
+    let cat = state.all.find(cat => cat.slug == catName);
+    console.log(cat['id'])
+    return cat['id']
+  },
   allCategoriesLoaded: state => state.loaded
 }
 

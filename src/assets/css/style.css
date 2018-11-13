@@ -113,6 +113,15 @@ a:hover{
 .note-title a:hover {
     color: #b99660 !important;
 }
+.note-status ul {
+    list-style: none;
+    padding: 0px;
+    height: 10px;
+}
+.note-status ul li {
+    float: left;
+    margin-right: 10px;
+}
 .widget-area {
     width: 275px;
     float: left;

@@ -33,6 +33,10 @@ import store from './store'
 import * as types from './store/mutation-types'
 import {Luminous} from 'luminous-lightbox'; 
 import hljs from 'highlight.js';
+//Font aswome
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 
 Vue.use(VueLazyload)

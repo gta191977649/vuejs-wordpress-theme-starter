@@ -2,9 +2,10 @@
   <div class="note-wrapper" v-if="post">
     <div class="note">
       <div class="note-info"><strong>By:</strong> {{post._embedded.author[0].name}} <strong>日付：</strong>{{post.date}}</div>
-      <h1>{{ post.title.rendered }}</h1>
+      <h1 v-html="post.title.rendered"></h1>
       <hr/>
       <div v-html="post.content.rendered" v-note></div>
+      <post-info :post="post"/>
     </div>
     <comment :postid="post.id" v-if="post.comment_status == 'open'"/>
   </div>
@@ -16,8 +17,8 @@
 <script>
 import Loader from '../partials/Loader.vue';
 import Comment from '../Comment/Comment.vue';
+import PostInfo from './PostInfo';
 import { mapGetters } from 'vuex';
-
 export default {
   mounted(){
     this.audio = new Audio(window.SETTINGS.UI_LOAED)
@@ -57,7 +58,8 @@ export default {
 
   components: {
     Loader,
-    Comment
+    Comment,
+    PostInfo
   }
 }
 </script>
