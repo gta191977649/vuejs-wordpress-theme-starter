@@ -26,14 +26,18 @@ export default {
             catName:null,
             posts:[],
             error:false,
-            loading:false
+            loading:false,
+            audio: null,
         }
     },
     mounted() {
+        this.audio = new Audio(window.SETTINGS.UI_LOAED)
+
         //用正则表达式取得url最后分类的名称
         this.catName = this.$route.params.cat.match('[^/]+(?=\/$|$)')[0]
         //this.getCategoriesIdByName(this.catName)
         this.fetchPostByCatName(this.catName)
+
     },
     methods: {
         fetchPostByCat(catId) {
@@ -63,6 +67,7 @@ export default {
         async fetchPostByCatName(catName) {
             let cat = await this.fetchCatBySlug(catName)
             this.fetchPostByCat(cat[0].id)
+            this.audio.play()
         }
 
     }
