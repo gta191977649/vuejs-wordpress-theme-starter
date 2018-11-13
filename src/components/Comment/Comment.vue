@@ -25,11 +25,11 @@
                     </div>
                 </div>
             </div>
-            <button v-on:click="setReply(comment.id)" class="comment-btn-reply btn btn-primary" v-if="comment.parent === 0">返信する</button>
+            <button v-on:click="setReply(comment)" class="comment-btn-reply btn btn-primary" v-if="comment.parent === 0">返信する</button>
 
         </div>
         <!-- 发布评论 -->
-        <comment-form v-on:comment-ok="updateComment" :parentid="parent" :postid="postid"/>
+        <comment-form v-on:comment-ok="updateComment" :parentComment="parentComment" :postid="postid" v-on:cancelReply="cancelReply"/>
 
     </div>
 </template>
@@ -40,7 +40,7 @@ export default {
     data() {
         return {
             comments: false,
-            parent: 0
+            parentComment: null
         };
     },
     mounted() {
@@ -63,8 +63,11 @@ export default {
                 }
             );
         },
-        setReply(parent) { //设置回复
-            this.parent = parent
+        setReply(parentComment) { //设置回复
+            this.parentComment = parentComment
+        },
+        cancelReply(){
+            this.parentComment = null
         },
         updateComment:function() { //触发UI重新更新
             this.getComments(this.postid)

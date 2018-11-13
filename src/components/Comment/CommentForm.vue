@@ -1,7 +1,8 @@
 <template>
     <div class="maple-ui-window">
             <div class="maple-ui-window-header">
-                コメントを残す {{comment.parent}}
+    
+                コメントを残す <span v-if="comment.parent !== 0">( 返信 -> {{parentComment.author_name}} <a v-on:click="cancelReply"><strong>キャンセル</strong></a> )</span>
                 <!--
                 <div class="maple-ui-win-control">
                     <a href="#" class="btn-ui-disabled float-right">X</a>
@@ -45,7 +46,7 @@ export default {
                 author_url:null,
                 content:null,
                 post:this.postid,//对于博文
-                parent:this.parentid,//对应楼主
+                parent:0,//对应楼主
             },
             onProcessing: false,//传送请求的时候紧张用户重新提交表单
             statusMsg: null,
@@ -56,19 +57,21 @@ export default {
         postid: {
             required: true
         },
-        parentid: {
-            required: true
+        parentComment: {
+            required: false
         },
-        
     },
     computed: {
         ...mapGetters({
             info: 'info',
         }),    
     },
+    mounted(){
+        this.comment.parent = 0
+    },
     watch: {
-        parentid:function(newVal, oldVal) {
-          this.comment.parent = newVal
+        parentComment:function(newCommentParent) {
+          this.comment.parent = newCommentParent ? newCommentParent.id : 0 
         }
     },
     methods: {
@@ -94,6 +97,10 @@ export default {
                 this.onProcessing = false
 
             })
+        },
+        cancelReply(){
+            this.comment.parent = 0
+            this.$emit('cancelReply')
         },
         clearForm() {
             //清空表单
