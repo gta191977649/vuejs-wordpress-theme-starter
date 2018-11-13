@@ -2,7 +2,7 @@
     <div class="note-status">
           <ul>
               <li v-for="(cat,idx) in post._embedded['wp:term'][0]" :key="idx"><font-awesome-icon icon="tag"/> <router-link :to="'/category/'+cat.slug">{{cat.name}}</router-link></li>
-              <li><font-awesome-icon icon="comments"/> <router-link :to="'/archives/'+post.slug">{{post.replies ? post.replies.length : 0}}</router-link></li>
+              <li><font-awesome-icon icon="comments"/> <router-link :to="'/archives/'+post.slug">{{post._embedded['replies'] ? post._embedded['replies'][0].length : 0}}</router-link></li>
           </ul>
     </div>
 </template>
