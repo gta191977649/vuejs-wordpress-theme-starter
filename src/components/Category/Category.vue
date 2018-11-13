@@ -26,7 +26,7 @@ export default {
             catName:null,
             posts:[],
             error:false,
-            loading:false,
+            loading:true,
             audio: null,
         }
     },
@@ -36,10 +36,20 @@ export default {
         //用正则表达式取得url最后分类的名称
         this.catName = this.$route.params.cat.match('[^/]+(?=\/$|$)')[0]
         //this.getCategoriesIdByName(this.catName)
-        this.fetchPostByCatName(this.catName)
 
     },
+    watch: {
+        '$route': 'onQueryParamChanged',
+        catName(val) {
+            this.fetchPostByCatName(val)
+        }
+    },
     methods: {
+        onQueryParamChanged(){
+            if(this.$route.params.cat && this.$route.params.cat !== null) {
+                this.catName = this.$route.params.cat.match('[^/]+(?=\/$|$)')[0]
+            }
+        },
         fetchPostByCat(catId) {
             this.loading = true
             axios.get(`/wp-json/wp/v2/posts?_embed&categories=${catId}`)
