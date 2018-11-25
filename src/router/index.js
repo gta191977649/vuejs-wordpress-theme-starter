@@ -8,10 +8,16 @@ import Page from '../components/Page/Page.vue'
 import Search from '../components/Search/Search'
 import Category from '../components/Category/Category'
 import FriendlyLink from '../components/FriendlyLink/Link'
+import PageNotFound from '../components/404'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
+    { 
+      path: '/404',
+      name: '404',
+      component: PageNotFound
+    },
     {
       path: '/:page?',
       name: 'Home',
@@ -42,6 +48,10 @@ const router = new VueRouter({
       path: '/link/tomodachi',
       name: 'Friends',
       component: FriendlyLink
+    },
+    { //404
+      path: '*',
+      redirect: "/404"
     },
 
     
