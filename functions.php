@@ -76,7 +76,6 @@ function ml_fix_search_url() {
 add_action( 'template_redirect', 'ml_fix_search_url' );
 
 // 评论回应邮件通知
-// 评论回应邮件通知
 function comment_mail_notify($comment_id) {
     $admin_email = get_bloginfo ('admin_email'); 
     $comment = get_comment($comment_id);
