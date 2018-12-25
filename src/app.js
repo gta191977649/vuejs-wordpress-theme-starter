@@ -6,7 +6,7 @@ window.SETTINGS = {
   SITE_URI: '', //默认可以不填，前提是你的博客在你域名下面，而不是在子目录里
   NAV_MENU_NAME: 'nav',
   WIDGET_MENU_NAME: 'main',
-  POST_PAGE_LIMIT: 5,
+  POST_PAGE_LIMIT: 10,
   FRIENDLY_PAGE:"friendly_links.php",
 
   // UI EFFECT

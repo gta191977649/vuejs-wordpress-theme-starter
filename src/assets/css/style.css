@@ -243,7 +243,8 @@ nav a:hover {
     margin-left: 35px;   
 }
 .widget-content > * {
-    overflow: hidden;
+    word-wrap: break-word;
+    padding: 2px;
 }
 .widget .widget-content ul li{
     list-style-type: none;
