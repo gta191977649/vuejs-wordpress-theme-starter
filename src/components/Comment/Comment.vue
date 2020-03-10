@@ -66,10 +66,12 @@ export default {
             axios.get(`${window.SETTINGS.SITE_URI}/wp-json/wp/v2/comments?post=${id}` )
                 .then(response => {
                     this.comments = response.data;
-                    console.log(this.comments)
+                    console.log(this.comments);
+                    this.loading = false;
                 })
                 .catch(e => {
                     console.log(e);
+                    this.loading = false;
                 }
             );
         },
