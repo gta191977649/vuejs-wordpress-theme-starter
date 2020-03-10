@@ -6,8 +6,8 @@
   <title><?php echo get_bloginfo('name') ?> - <?php echo get_bloginfo( 'description' )?></title>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="renderer" content="webkit">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP|Noto+Serif+KR|Noto+Serif+SC|Noto+Serif+TC&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="profile" href="http://gmpg.org/xfn/11">
   <?php wp_head(); ?>
 </head>
 <body>
